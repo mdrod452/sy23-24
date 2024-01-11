@@ -31,5 +31,12 @@ Public Class Form1
         outfile.Write(field5.Text)
         outfile.Write("|")
         outfile.WriteLine(anythingPicture.ImageLocation)
+        outfile.Close()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim infile As New StreamReader("data.txt")
+        field1.Text = infile.ReadToEnd
+        infile.Close()
     End Sub
 End Class

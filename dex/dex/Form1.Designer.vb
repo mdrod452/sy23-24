@@ -72,13 +72,13 @@ Partial Class Form1
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(121, 26)
         Me.SaveToolStripMenuItem.Text = "new"
         '
         'SaveToolStripMenuItem1
         '
         Me.SaveToolStripMenuItem1.Name = "SaveToolStripMenuItem1"
-        Me.SaveToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.SaveToolStripMenuItem1.Size = New System.Drawing.Size(121, 26)
         Me.SaveToolStripMenuItem1.Text = "save"
         '
         'Label1
