@@ -24,9 +24,9 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.anythingPicture = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.StripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,6 +38,10 @@ Partial Class Form1
         Me.field3 = New System.Windows.Forms.TextBox()
         Me.field5 = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.lastb = New System.Windows.Forms.Button()
+        Me.nextb = New System.Windows.Forms.Button()
+        Me.previousb = New System.Windows.Forms.Button()
+        Me.firstb = New System.Windows.Forms.Button()
         CType(Me.anythingPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -55,31 +59,31 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 28)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'StripMenuItem
+        '
+        Me.StripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.SaveToolStripMenuItem})
+        Me.StripMenuItem.Name = "StripMenuItem"
+        Me.StripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.StripMenuItem.Text = "file"
+        '
         'NewToolStripMenuItem
         '
-        Me.NewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveToolStripMenuItem, Me.SaveToolStripMenuItem1})
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
-        Me.NewToolStripMenuItem.Text = "file"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.NewToolStripMenuItem.Text = "new"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(121, 26)
-        Me.SaveToolStripMenuItem.Text = "new"
-        '
-        'SaveToolStripMenuItem1
-        '
-        Me.SaveToolStripMenuItem1.Name = "SaveToolStripMenuItem1"
-        Me.SaveToolStripMenuItem1.Size = New System.Drawing.Size(121, 26)
-        Me.SaveToolStripMenuItem1.Text = "save"
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SaveToolStripMenuItem.Text = "save"
         '
         'Label1
         '
@@ -165,11 +169,51 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'lastb
+        '
+        Me.lastb.Location = New System.Drawing.Point(694, 31)
+        Me.lastb.Name = "lastb"
+        Me.lastb.Size = New System.Drawing.Size(94, 29)
+        Me.lastb.TabIndex = 12
+        Me.lastb.Text = "last"
+        Me.lastb.UseVisualStyleBackColor = True
+        '
+        'nextb
+        '
+        Me.nextb.Location = New System.Drawing.Point(594, 31)
+        Me.nextb.Name = "nextb"
+        Me.nextb.Size = New System.Drawing.Size(94, 29)
+        Me.nextb.TabIndex = 13
+        Me.nextb.Text = "next"
+        Me.nextb.UseVisualStyleBackColor = True
+        '
+        'previousb
+        '
+        Me.previousb.Location = New System.Drawing.Point(494, 31)
+        Me.previousb.Name = "previousb"
+        Me.previousb.Size = New System.Drawing.Size(94, 29)
+        Me.previousb.TabIndex = 14
+        Me.previousb.Text = "previous"
+        Me.previousb.UseVisualStyleBackColor = True
+        '
+        'firstb
+        '
+        Me.firstb.Location = New System.Drawing.Point(394, 31)
+        Me.firstb.Name = "firstb"
+        Me.firstb.Size = New System.Drawing.Size(94, 29)
+        Me.firstb.TabIndex = 15
+        Me.firstb.Text = "first"
+        Me.firstb.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.firstb)
+        Me.Controls.Add(Me.previousb)
+        Me.Controls.Add(Me.nextb)
+        Me.Controls.Add(Me.lastb)
         Me.Controls.Add(Me.field5)
         Me.Controls.Add(Me.field4)
         Me.Controls.Add(Me.field3)
@@ -195,9 +239,9 @@ Partial Class Form1
 
     Friend WithEvents anythingPicture As PictureBox
     Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents StripMenuItem As ToolStripMenuItem
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -209,4 +253,8 @@ Partial Class Form1
     Friend WithEvents field3 As TextBox
     Friend WithEvents field5 As TextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents lastb As Button
+    Friend WithEvents nextb As Button
+    Friend WithEvents previousb As Button
+    Friend WithEvents firstb As Button
 End Class
