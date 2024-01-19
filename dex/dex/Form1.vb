@@ -13,6 +13,8 @@ Public Class Form1
         field4.Text = ""
         field5.Text = ""
         anythingPicture.Image = Nothing
+        current = count
+        count = count + 1
     End Sub
 
     Private Sub anythingPicture_Click(sender As Object, e As EventArgs) Handles anythingPicture.Click
@@ -51,10 +53,9 @@ Public Class Form1
     Private Sub field_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If IO.File.Exists("data.txt") Then
             Dim infile As New StreamReader("data.txt")
-            Dim idx As Integer
             While (Not infile.EndOfStream)
-                records(idx) = infile.ReadLine
-                idx = idx + 1
+                records(count) = infile.ReadLine
+                count = count + 1
             End While
             infile.Close()
             showrecord(0)
@@ -76,26 +77,26 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub First_Click(sender As Object, e As EventArgs)
+    Private Sub First_Click(sender As Object, e As EventArgs) Handles firstb.Click
         current = 0
         showrecord(current)
     End Sub
 
-    Private Sub Last_Click(sender As Object, e As EventArgs)
+    Private Sub Last_Click(sender As Object, e As EventArgs) Handles lastb.Click
         If count > 0 Then
             current = count - 1
             showrecord(current)
         End If
     End Sub
 
-    Private Sub Previous_Click(sender As Object, e As EventArgs)
+    Private Sub Previous_Click(sender As Object, e As EventArgs) Handles previousb.Click
         If current > 0 Then
             current = current - 1
         End If
         showrecord(current)
     End Sub
 
-    Private Sub Next_Button_Click(sender As Object, e As EventArgs)
+    Private Sub Next_Button_Click(sender As Object, e As EventArgs) Handles nextb.Click
         If current < count - 1 Then
             current = current + 1
             showrecord(current)
